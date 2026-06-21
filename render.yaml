@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ger
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: INVITE_CODE
+        sync: false
