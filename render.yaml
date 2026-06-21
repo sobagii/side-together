@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: side-room
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: DATA_DIR
+        value: /var/data
+      - key: INVITE_CODE
+        sync: false
+    disk:
+      name: side-room-data
+      mountPath: /var/data
+      sizeGB: 1
